@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 
 class CeeController extends Controller {
 
-	public function store(User $user, Request $request) {
+	public function store(User $user, Request $request) { dd(request);
 		$this->validate($request, [
 			'cedula' => 'required',
 			'fecha_cuestionario' => 'required'
