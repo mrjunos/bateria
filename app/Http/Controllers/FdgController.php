@@ -24,7 +24,7 @@ class FdgController extends Controller {
 		->whereYear('fecha_cuestionario', $fecha_cuestionario->year)
 		->first();
 
-		if(count($fdg) == 0){
+		if($fdg == null){
 			$fdg = Fdg::create([
 				'cedula' => $cedula,
 				'fecha_cuestionario' => $fecha_cuestionario,

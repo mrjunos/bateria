@@ -28,7 +28,7 @@ class FrpifaController extends Controller {
 		->whereYear('fecha_cuestionario', $year->year)
 		->first();
 
-		if(count($frpifa) == 0){
+		if($frpifa == null){
 			$frpifa = Frpifa::create([
 				'cedula' => $request->get('cedula'),
 				'nombre' => $request->get('nombre'),

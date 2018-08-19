@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 
 class CeeController extends Controller {
 
-	public function store(User $user, Request $request) { dd(request);
+	public function store(User $user, Request $request) {
 		$this->validate($request, [
 			'cedula' => 'required',
 			'fecha_cuestionario' => 'required'
@@ -28,7 +28,7 @@ class CeeController extends Controller {
 		->whereYear('fecha_cuestionario', $year->year)
 		->first();
 
-		if(count($cee) == 0){
+		if($cee == null){
 			$cee = Cee::create([
 				'cedula' => $request->get('cedula'),
 				'nombre' => $request->get('nombre'),

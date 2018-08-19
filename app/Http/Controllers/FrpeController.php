@@ -28,7 +28,7 @@ class FrpeController extends Controller {
 		->whereYear('fecha_cuestionario', $year->year)
 		->first();
 
-		if(count($frpe) == 0){
+		if($frpe == null){
 			$frpe = Frpe::create([
 				'cedula' => $request->get('cedula'),
 				'nombre' => $request->get('nombre'),
